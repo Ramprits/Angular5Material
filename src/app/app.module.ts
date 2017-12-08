@@ -9,13 +9,17 @@ import { AppComponent } from "./app.component";
 import { environment } from "../environments/environment";
 import { DashboardComponent } from "./ui/dashboard/dashboard.component";
 import {
+  MatTableModule,
   MatButtonModule,
   MatCheckboxModule,
+  MatFormFieldModule,
   MatIconModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatInputModule
 } from "@angular/material";
 import { NavComponent } from "./ui/nav/nav.component";
 import { ContactComponent } from "./ui/contact/contact.component";
+import { FormsModule } from "@angular/forms";
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +30,11 @@ import { ContactComponent } from "./ui/contact/contact.component";
   imports: [
     BrowserAnimationsModule,
     MatButtonModule,
+    MatInputModule,
+    MatTableModule,
     MatIconModule,
+    MatFormFieldModule,
+    FormsModule,
     MatCheckboxModule,
     BrowserModule,
     MatToolbarModule,
