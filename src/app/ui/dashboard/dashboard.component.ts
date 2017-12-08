@@ -1,21 +1,26 @@
-import { Component, OnInit } from "@angular/core";
-import { MatTableDataSource } from "@angular/material";
+import { Component, OnInit, ViewChild, AfterViewInit } from "@angular/core";
+import { MatTableDataSource, MatPaginator, MatSort } from "@angular/material";
 @Component({
   selector: "o-dashboard",
   templateUrl: "./dashboard.component.html",
   styleUrls: ["./dashboard.component.scss"]
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements AfterViewInit {
   displayedColumns = ["position", "name", "weight", "symbol"];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
-
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
   constructor() {}
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
     this.dataSource.filter = filterValue;
   }
-  ngOnInit() {}
+
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+  }
 }
 export interface Element {
   name: string;

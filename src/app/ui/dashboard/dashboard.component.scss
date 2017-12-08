@@ -11,6 +11,21 @@ mat-form-field.mat-form-field {
     width: 100px;
 }
 
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+.mat-table {
+    overflow: auto;
+    max-height: 500px;
+}
+
+.mat-header-cell.mat-sort-header-sorted {
+    color: black;
+}
+
 .example-header {
     min-height: 64px;
     padding: 8px 24px 0;
@@ -23,5 +38,5 @@ mat-form-field.mat-form-field {
 
 .mat-table {
     overflow: auto;
-    max-height: 500px;
+    max-height: 700px;
 }

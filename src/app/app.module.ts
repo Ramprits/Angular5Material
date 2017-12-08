@@ -15,23 +15,27 @@ import {
   MatFormFieldModule,
   MatIconModule,
   MatToolbarModule,
+  MatPaginatorModule,
   MatInputModule
 } from "@angular/material";
 import { NavComponent } from "./ui/nav/nav.component";
 import { ContactComponent } from "./ui/contact/contact.component";
 import { FormsModule } from "@angular/forms";
+import { PostComponent } from "./ui/post/post.component";
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     NavComponent,
-    ContactComponent
+    ContactComponent,
+    PostComponent
   ],
   imports: [
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
     MatTableModule,
+    MatPaginatorModule,
     MatIconModule,
     MatFormFieldModule,
     FormsModule,
