@@ -1,0 +1,15 @@
+<div class="columns is-mobile">
+  <div class="column is-offset-1">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)">
+      <mat-form-field class="example-full-width">
+        <input matInput type="text" formControlName="email" placeholder="Your email">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <input matInput type="password" formControlName="password" placeholder="Your password">
+      </mat-form-field>
+      <br>
+      <button mat-raised-button color="primary" [disabled]="registerForm.invalid"> Save</button>
+    </form>
+  </div>
+</div>

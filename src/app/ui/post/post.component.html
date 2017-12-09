@@ -1,3 +1,13 @@
-<p>
-  post works!
-</p>
+<ng-container *ngIf="posts">
+  <div class="is-clearfix"></div>
+  <table class="table">
+    <tr class="is-bg-primary">
+      <td>Id</td>
+      <td>Title</td>
+    </tr>
+    <tr *ngFor="let post of posts">
+      <td>{{post.id}}</td>
+      <td>{{post.title}}</td>
+    </tr>
+  </table>
+</ng-container>

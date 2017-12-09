@@ -10,6 +10,7 @@ import { environment } from "../environments/environment";
 import { DashboardComponent } from "./ui/dashboard/dashboard.component";
 import {
   MatTableModule,
+  MatCardModule,
   MatButtonModule,
   MatCheckboxModule,
   MatFormFieldModule,
@@ -22,6 +23,9 @@ import { NavComponent } from "./ui/nav/nav.component";
 import { ContactComponent } from "./ui/contact/contact.component";
 import { FormsModule } from "@angular/forms";
 import { PostComponent } from "./ui/post/post.component";
+import { PostService } from "./ui/post/post.service";
+import { HttpClientModule } from "@angular/common/http";
+import { CommonModule } from "@angular/common";
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,8 +35,11 @@ import { PostComponent } from "./ui/post/post.component";
     PostComponent
   ],
   imports: [
+    CommonModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    HttpClientModule,
+    MatCardModule,
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
@@ -48,7 +55,7 @@ import { PostComponent } from "./ui/post/post.component";
       ? ServiceWorkerModule.register("/ngsw-worker.js")
       : []
   ],
-  providers: [],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
