@@ -10,6 +10,9 @@
       <button mat-button>Clients</button>
       <button mat-button [routerLink]="['/post']">Post</button>
       <button mat-button [routerLink]="['/user']">User</button>
+      <button *ngIf="!auth.isAuthenticated" mat-button routerLink="/register">Register</button>
+      <button *ngIf="!auth.isAuthenticated" mat-button routerLink="/login">Login</button>
+      <button *ngIf="auth.isAuthenticated" mat-button (click)="auth.logout()">Logout</button>
     </mat-toolbar>
   </div>
 </div>

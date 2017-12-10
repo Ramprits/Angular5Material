@@ -1,25 +1,22 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { FormGroup, Validators } from "@angular/forms";
+import { AuthService } from "../auth.service";
 
 @Component({
   selector: "o-register",
-  templateUrl: "./register.component.html",
-  styleUrls: ["./register.component.scss"]
+  templateUrl: "./register.component.html"
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private auth: AuthService) {}
 
   ngOnInit() {
     this.registerForm = this.fb.group({
       email: ["", [Validators.required]],
       password: ["", [Validators.required]]
     });
-  }
-  onSubmit(registerForm) {
-    console.log(registerForm);
   }
 }
 

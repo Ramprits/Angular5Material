@@ -5,7 +5,6 @@ import { AppRoutingModule } from "./app-routing.module";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { ServiceWorkerModule } from "@angular/service-worker";
 import { AppComponent } from "./app.component";
-
 import { environment } from "../environments/environment";
 import { DashboardComponent } from "./ui/dashboard/dashboard.component";
 import {
@@ -24,15 +23,20 @@ import { ContactComponent } from "./ui/contact/contact.component";
 import { FormsModule } from "@angular/forms";
 import { PostComponent } from "./ui/post/post.component";
 import { PostService } from "./ui/post/post.service";
-import { HttpClientModule } from "@angular/common/http";
+import { ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
+import { QuizzComponent } from "./ui/quizz/quizz.component";
+import { QuizzService } from "./ui/quizz/quizz.service";
+import { AuthService } from "./user/auth.service";
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     NavComponent,
     ContactComponent,
-    PostComponent
+    PostComponent,
+    QuizzComponent
   ],
   imports: [
     CommonModule,
@@ -55,7 +59,7 @@ import { CommonModule } from "@angular/common";
       ? ServiceWorkerModule.register("/ngsw-worker.js")
       : []
   ],
-  providers: [PostService],
+  providers: [PostService, QuizzService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

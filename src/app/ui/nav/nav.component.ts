@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { AuthService } from "../../user/auth.service";
 
 @Component({
   selector: "o-nav",
@@ -6,7 +7,10 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./nav.component.scss"]
 })
 export class NavComponent implements OnInit {
-  constructor() {}
+  constructor(private auth: AuthService) {}
 
   ngOnInit() {}
+  logout() {
+    this.auth.logout();
+  }
 }
