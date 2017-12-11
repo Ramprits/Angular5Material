@@ -36,7 +36,6 @@ export class AuthService {
         }
       );
   }
-
   login(credentials) {
     return this.httpClient
       .post<any>(`http://localhost:5000/api/Account/login`, credentials)
@@ -56,7 +55,6 @@ export class AuthService {
         }
       );
   }
-
   authenticated(res) {
     localStorage.setItem("token", res);
     this.router.navigate(["/"]);
