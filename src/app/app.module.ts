@@ -18,6 +18,7 @@ import {
   MatToolbarModule,
   MatPaginatorModule,
   MatInputModule,
+  MatProgressSpinnerModule,
   MatSnackBarModule
 } from "@angular/material";
 import { NavComponent } from "./ui/nav/nav.component";
@@ -46,6 +47,7 @@ import { CoreModule } from "./core/core.module";
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    MatProgressSpinnerModule,
     MatSnackBarModule,
     HttpClientModule,
     MatCardModule,

@@ -16,7 +16,7 @@ export class AuthService {
   }
   register(credentials) {
     return this.httpClient
-      .post<any>(`http://localhost:61970/api/Account`, credentials)
+      .post<any>(`http://localhost:5000/api/Account`, credentials)
       .subscribe(
         res => {
           this.authenticated(res);
@@ -39,7 +39,7 @@ export class AuthService {
 
   login(credentials) {
     return this.httpClient
-      .post<any>(`http://localhost:61970/api/Account/login`, credentials)
+      .post<any>(`http://localhost:5000/api/Account/login`, credentials)
       .subscribe(
         res => {
           this.authenticated(res);

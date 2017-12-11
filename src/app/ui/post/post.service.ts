@@ -11,8 +11,10 @@ export class PostService {
   ROOT_URL = "https://jsonplaceholder.typicode.com/photos";
   constructor(private httpClient: HttpClient) {}
 
-  GetPost(): Observable<IPost[] | TrackerError> {
-    return this.httpClient.get<IPost[]>(this.ROOT_URL).catch(this.handleError);
+  GetPost(): Observable<IPost[]> {
+    return this.httpClient.get<IPost[]>(this.ROOT_URL).map((post: IPost[]) => {
+      return post;
+    });
   }
 
   private handleError(error: HttpErrorResponse): Observable<TrackerError> {

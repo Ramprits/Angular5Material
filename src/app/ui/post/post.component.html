@@ -1,13 +1,10 @@
-<ng-container *ngIf="posts">
-  <div class="is-clearfix"></div>
-  <table class="table">
-    <tr class="is-bg-primary">
-      <td>Id</td>
-      <td>Title</td>
-    </tr>
-    <tr *ngFor="let post of posts">
-      <td>{{post.id}}</td>
-      <td>{{post.title}}</td>
-    </tr>
-  </table>
-</ng-container>
+<table class="table is-bordered is-striped is-narrow is-fullwidth">
+  <tr>
+    <td>Id</td>
+    <td>Title</td>
+  </tr>
+  <tr *ngFor="let item of posts">
+    <td>{{item.id}}</td>
+    <td>{{item.title}}</td>
+  </tr>
+</table>

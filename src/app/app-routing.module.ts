@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: "dashboard", component: DashboardComponent },
   { path: "contact", component: ContactComponent },
   { path: "quizz", component: QuizzeComponent },
+  { path: "post", component: PostComponent },
   { path: "user", loadChildren: "app/user/user.module#UserModule" }
 ];
 
