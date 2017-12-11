@@ -1,15 +1,10 @@
 <div layout="row">
   <div layout="column" layout-fill>
     <mat-toolbar color="primary">
-      <span>Train MI</span>
-
+      <span>Application Name</span>
       <span style="flex: 1 1 auto;"></span>
-      <button mat-icon-button color="warn" [routerLink]="['/dashboard']">
-        <mat-icon aria-label="Example icon-button with a heart icon">home</mat-icon>
-      </button>
-      <button mat-button>Clients</button>
-      <button mat-button [routerLink]="['/post']">Post</button>
-      <button mat-button [routerLink]="['/user']">User</button>
+      <button mat-button *ngIf="auth.isAuthenticated">Clients</button>
+      <button mat-button *ngIf="auth.isAuthenticated" [routerLink]="['/dashboard']">Home</button>
       <button *ngIf="!auth.isAuthenticated" mat-button routerLink="/user/register">Register</button>
       <button *ngIf="!auth.isAuthenticated" mat-button routerLink="/user/login">Login</button>
       <button *ngIf="auth.isAuthenticated" mat-button (click)="auth.logout()">Logout</button>

@@ -9,7 +9,7 @@ import { QuizzeService } from "./quizze.service";
 export class QuizzeComponent implements OnInit {
   quizzes: any[];
   Quizze: FormGroup;
-  constructor(private fb: FormBuilder, private quizze: QuizzeService) {}
+  constructor(private fb: FormBuilder, public quizze: QuizzeService) {}
   ngOnInit() {
     this.Quizze = this.fb.group({
       title: ["", [Validators.required]]

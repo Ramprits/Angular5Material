@@ -5,8 +5,7 @@ import { MatTableDataSource } from "@angular/material";
 
 @Component({
   selector: "o-post",
-  templateUrl: "./post.component.html",
-  styleUrls: ["./post.component.scss"]
+  templateUrl: "./post.component.html"
 })
 export class PostComponent implements OnInit {
   displayedColumns = ["Id", "Title", "URL"];

@@ -17,7 +17,8 @@ import {
   MatIconModule,
   MatToolbarModule,
   MatPaginatorModule,
-  MatInputModule
+  MatInputModule,
+  MatSnackBarModule
 } from "@angular/material";
 import { NavComponent } from "./ui/nav/nav.component";
 import { ContactComponent } from "./ui/contact/contact.component";
@@ -29,6 +30,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { AuthService } from "./user/auth.service";
 import { QuizzeComponent } from "./quizze/quizze.component";
 import { QuizzeService } from "./quizze/quizze.service";
+import { CoreModule } from "./core/core.module";
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,9 +42,11 @@ import { QuizzeService } from "./quizze/quizze.service";
   ],
   imports: [
     CommonModule,
+    CoreModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    MatSnackBarModule,
     HttpClientModule,
     MatCardModule,
     MatInputModule,

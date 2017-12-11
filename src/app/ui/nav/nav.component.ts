@@ -7,7 +7,7 @@ import { AuthService } from "../../user/auth.service";
   styleUrls: ["./nav.component.scss"]
 })
 export class NavComponent implements OnInit {
-  constructor(private auth: AuthService) {}
+  constructor(public auth: AuthService) {}
 
   ngOnInit() {}
   logout() {
